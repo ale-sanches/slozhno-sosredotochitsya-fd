@@ -8,11 +8,12 @@
     --font-weight-normal: 400;
     --font-size-h1: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     --font-size: 18px;
+    --text-color: #f1b2ce;
     --bg-image: url(/images/cover-image-dark.png);
-    --bg-color: #000028;
+    --main-color: #000028;
     --title-color: #DB00FF;
     --accent-color: #FF0070;
-    --section-title-text-color: #000028;
-    --padding-small: 10px;
+    --small-gap: 10px;
+    --big-gap: 20px;
     --section-title-color: var(--accent-color);
 }
