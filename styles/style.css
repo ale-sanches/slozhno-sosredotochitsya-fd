@@ -1,5 +1,128 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+    /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+    background-image: var(--bg-image);
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--bg-color);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: var(--font-family), sans-serif;
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size);
+    padding: var(--padding-small);
+}
+
+.header {
+    height: 100vh;
+    min-height: 668px;
+    display: grid;
+    grid-template-columns: 1fr;
+    /*grid-template-rows: 30% 30% 1fr;*/
+    align-content: space-around;
+    /*gap: 55px;*/
+    /*position: relative;*/
+}
+
+.header__title {
+    color: var(--title-color);
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-bold);
+    text-shadow: 4px 4px 0 var(--accent-color);
+    line-height: 83%;
+    justify-self: center;
+}
+
+.title-decor {
+    background-color: var(--accent-color);
+}
+
+.title {
+    color: var(--section-title-text-color);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size);
+}
+
+.header__text {
+    max-height: min-content;
+}
+
+.header__theme-menu {
+    align-self: center;
+    justify-self: end;
+
+}
+
+.header__theme-menu-button {
+    color: var(--accent-color);
+    background-color: transparent;
+    border: none;
+    text-transform: lowercase;
+    text-align: center;
+    padding: 0 13px;
+    width: 70px;
+    height: 26px;
+}
+
+.header__theme-menu-button:hover {
+    border: 1px solid rgba(255, 0, 112, 0.4);
+}
+
+.header__theme-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rec {
+    font-family: var(--font-family), sans-serif;
+    color: var(--accent-color);
+    position: absolute;
+    right: 28px;
+    display: inline-block;
+}
+
+.rec::after {
+    content: "";
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-left: 10px;
+    border-radius: 50%;
+    background-color: #ff0070;
+    box-shadow: 0 0 4px 2px rgba(255, 0, 112, 1);
+    position: absolute;
+    top: 8px;
+}
+
+.decorated-zone {
+    position: relative;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+}
+
+.decorated-zone::before {
+    top: 0;
+    right: 0;
+    border-top: 1px solid var(--accent-color);
+    border-right: 1px solid var(--accent-color);
+}
+.decorated-zone::after {
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid var(--accent-color);
+    border-left: 1px solid var(--accent-color);
+}
+.section__title{
+    color: var(--section-title-color);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size);
+    line-height: 130%;
 }
