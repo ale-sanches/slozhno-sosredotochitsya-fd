@@ -31,11 +31,13 @@
     font-weight: var(--font-weight-bold);
     text-shadow: 4px 4px 0 var(--accent-color);
     line-height: 83%;
-    justify-self: center;
+    justify-self: start;
+    align-self: center;
 }
 
 .title-decor {
     background-color: var(--accent-color);
+    max-height: min-content;
 }
 
 .title {
@@ -141,8 +143,13 @@
 }
 
 .articles__article {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: var(--small-gap);
+    align-items: start;
+}
+.article__title{
+    width: 100%;
 }
 
 .article__text {
@@ -160,12 +167,101 @@
     font-weight: var(--font-weight-normal);
     margin-bottom: var(--small-gap);
 }
-.advice-article{
+
+.advice-article {
     display: flex;
     flex-direction: column;
     gap: var(--big-gap);
 }
 
-.advice-article .article__title {
-    /*margin-bottom: var(--big-gap);*/
+.link {
+    position: relative;
+    color: var(--text-color);
+    text-shadow: 2px 2px 0 var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* подчёркивание при наведении */
+.link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--text-color);
+    transition: width 0.3s ease;
+}
+
+/* появление подчёркивания без тени */
+.link:hover::after {
+    width: 100%;
+}
+
+/* рамка при фокусе (без тени) */
+.link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--text-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.link:focus {
+    outline: none;
+}
+
+/* показываем рамку только при focus-visible */
+.link:focus-visible::before {
+    opacity: 1;
+}
+
+@media (width >= 768px) {
+    .page {
+        padding: var(--big-gap);
+    }
+
+    .content {
+        gap: 80px;
+    }
+
+    .content__section {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: var(--big-gap);
+    }
+
+    .causes-section {
+        .section__title {
+            grid-column: 1;
+        }
+
+        .articles {
+            grid-column: 1 / -1;
+        }
+    }
+
+}
+
+@media (width >= 1024px) {
+    .content__section {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column: span 2;
+
+    }
+
+    .articles, .advice-article {
+        grid-column: span 2;
+    }
+
+    .causes-section {
+
+        .articles {
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--big-gap);
+        }
+    }
 }
