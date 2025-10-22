@@ -5,7 +5,7 @@
     background-image: var(--bg-image);
     background-position: center;
     background-attachment: fixed;
-    background-color: var(--main-color);
+    background-color: var(--bg-color);
     background-size: cover;
     background-repeat: no-repeat;
     font-family: var(--font-family), monospace;
