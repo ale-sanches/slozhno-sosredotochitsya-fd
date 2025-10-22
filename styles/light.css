@@ -8,6 +8,7 @@
     --bg-image: url(/images/cover-image-light.png);
     --bg-color: #FFF1F7;
     --title-color: #FFC2E6;
+    --text-color: #353430;
     --accent-color: #FF8DCB;
     --section-title-text-color: #353430;
 }
@@ -16,30 +17,51 @@
     color: var(--section-title-text-color);
 }
 
+.theme-light .header__theme-menu-button:hover {
+    border: 1px solid rgba(50, 49, 45, 0.4);
+}
+
+.theme-light .header__theme-menu-button:focus {
+    outline: none;
+}
+
+.theme-light.header__theme-menu-button:focus-visible {
+    border-bottom: 1px solid var(--section-title-text-color);
+}
+
+.theme-light .header__theme-menu-button_active {
+    outline: 1px solid var(--section-title-text-color);
+    pointer-events: none;
+}
+
 .theme-light .decorated-zone::before {
-    top: 0;
-    right: 0;
     border-top: 1px solid var(--section-title-text-color);
     border-right: 1px solid var(--section-title-text-color);
 }
+
 .theme-light .decorated-zone::after {
-    bottom: 0;
-    left: 0;
     border-bottom: 1px solid var(--section-title-text-color);
     border-left: 1px solid var(--section-title-text-color);
 }
-.theme-light .rec{
+
+.theme-light .rec {
     display: none;
 }
+.theme-light .section__title{
+    color: var(--text-color);
+}
+
 @media (prefers-color-scheme: light) {
-    :root{
+    :root {
         --bg-image: url(/images/cover-image-light.png);
         --bg-color: #FFF1F7;
         --title-color: #FFC2E6;
         --accent-color: #FF8DCB;
         --section-title-text-color: #353430;
     }
-     .rec{
+
+    .rec {
         display: none;
     }
+
 }
