@@ -11,39 +11,28 @@
     --text-color: #353430;
     --accent-color: #FF8DCB;
     --section-title-text-color: #353430;
+    --theme-button-color: #353430;
+    --hover-border-color: rgba(50, 49, 45, 0.4);
 }
 
 .theme-light .header__theme-menu-button {
-    color: var(--section-title-text-color);
+    color: var(--theme-button-color);
 }
 
 .theme-light .header__theme-menu-button:hover {
-    border: 1px solid rgba(50, 49, 45, 0.4);
+    border: 1px solid var(--hover-border-color);
 }
 
 .theme-light .header__theme-menu-button:focus {
     outline: none;
 }
-
-.theme-light.header__theme-menu-button:focus-visible {
-    border-bottom: 1px solid var(--section-title-text-color);
-}
-
 .theme-light .header__theme-menu-button_active {
-    outline: 1px solid var(--section-title-text-color);
-    pointer-events: none;
+    outline: 1px solid var(--theme-button-color);
 }
-
-.theme-light .decorated-zone::before {
-    border-top: 1px solid var(--section-title-text-color);
-    border-right: 1px solid var(--section-title-text-color);
+.theme-light .header__theme-menu-button_active:hover {
+    border: none;
+    cursor: default;
 }
-
-.theme-light .decorated-zone::after {
-    border-bottom: 1px solid var(--section-title-text-color);
-    border-left: 1px solid var(--section-title-text-color);
-}
-
 .theme-light .rec {
     display: none;
 }
@@ -56,8 +45,11 @@
         --bg-image: url(/images/cover-image-light.png);
         --bg-color: #FFF1F7;
         --title-color: #FFC2E6;
+        --text-color: #353430;
         --accent-color: #FF8DCB;
         --section-title-text-color: #353430;
+        --theme-button-color: #353430;
+        --hover-border-color: rgba(50, 49, 45, 0.4);
     }
 
     .rec {
